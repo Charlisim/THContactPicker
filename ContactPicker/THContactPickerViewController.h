@@ -9,14 +9,21 @@
 #import <UIKit/UIKit.h>
 #import <AddressBookUI/AddressBookUI.h>
 #import "THContactPickerView.h"
+#import "THContact.h"
 #import "THContactPickerTableViewCell.h"
+#import <SBPickerSelector/SBPickerSelector.h>
+@protocol THUserStatusDelegate
+- (void) contactAdded:(THContact *)contact;
+- (void) contactRemoved:(THContact *)contact;
 
-@interface THContactPickerViewController : UIViewController <UITableViewDataSource, UITableViewDelegate, THContactPickerDelegate, ABPersonViewControllerDelegate>
+@end
+@interface THContactPickerViewController : UIViewController <UITableViewDataSource, UITableViewDelegate, THContactPickerDelegate, ABPersonViewControllerDelegate, SBPickerSelectorDelegate>
 
 @property (nonatomic, strong) THContactPickerView *contactPickerView;
 @property (nonatomic, strong) UITableView *tableView;
 @property (nonatomic, strong) NSArray *contacts;
 @property (nonatomic, strong) NSMutableArray *selectedContacts;
 @property (nonatomic, strong) NSArray *filteredContacts;
+@property (nonatomic, weak) UIViewController<THUserStatusDelegate> * delegate;
 
 @end

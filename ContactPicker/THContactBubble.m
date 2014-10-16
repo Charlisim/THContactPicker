@@ -17,6 +17,7 @@
 #define kBubbleColorSelected              [UIColor colorWithRed:151.0/255.0f green:199.0/255.0f blue:250.0/255.0f alpha:1.0]
 
 - (id)initWithName:(NSString *)name {
+    self = [super init];
     if ([self initWithName:name color:nil selectedColor:nil]) {
 
     }

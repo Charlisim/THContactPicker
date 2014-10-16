@@ -22,5 +22,6 @@
 @property (nonatomic, assign, getter = isSelected) BOOL selected;
 @property (nonatomic, strong) NSDate *date;
 @property (nonatomic, strong) NSDate *dateUpdated;
+@property (nonatomic, strong) NSMutableDictionary * phones;
 
 @end
